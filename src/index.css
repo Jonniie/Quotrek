@@ -76,3 +76,9 @@ input:focus {
     "description": "Import CSS Module as `styles`"
   },
 */
+
+a:-webkit-any-link {
+  color: var(--color-brand--2);
+  text-decoration: none;
+  transition: all 0.2s;
+}

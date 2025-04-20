@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Qurova;
+  src: url(/public/fonts/QurovaDEMO-Regular.otf) format("opentype");
+}
+
 .logo {
-  height: 5.2rem;
+  color: var(--color-brand--2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+
+  font-family: Qurova;
+  text-transform: none;
 }

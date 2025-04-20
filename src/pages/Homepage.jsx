@@ -12,12 +12,13 @@ export default function Homepage() {
         <h1>
           You travel the world.
           <br />
-          WorldWise keeps track of your adventures.
+          Quotrek keeps track of your adventures.
         </h1>
         <h2>
-          A world map that tracks your footsteps into every city you can think
-          of. Never forget your wonderful experiences, and show your friends how
-          you have wandered the world.
+          A world map that traces your journey, one city at a time. Capture the
+          memories of every place you've explored and relive the experiences
+          that shaped your travels. Share your adventures and let the world see
+          where you've wandered.
         </h2>
         <Link to={isSignedIn ? "/app" : "/signup"} className="cta">
           Start tracking now

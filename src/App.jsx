@@ -7,7 +7,6 @@ import AppLayout from "./pages/AppLayout";
 import Pricing from "./pages/Pricing";
 import CityList from "./components/CityList";
 
-import { ClerkProvider, SignIn } from "@clerk/clerk-react";
 import Login from "./pages/Login";
 
 function App() {
