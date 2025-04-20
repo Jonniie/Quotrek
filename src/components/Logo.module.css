@@ -1,6 +1,6 @@
 @font-face {
   font-family: Qurova;
-  src: url(/public/fonts/QurovaDEMO-Regular.otf) format("opentype");
+  src: url(/fonts/QurovaDEMO-Regular.otf) format("opentype");
 }
 
 .logo {
