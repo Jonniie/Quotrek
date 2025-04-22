@@ -10,7 +10,7 @@ function PageNav() {
   const btnTxt = isSignedIn ? "Dashboard" : "Login";
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav + " section"}>
       <Logo />
 
       <ul>

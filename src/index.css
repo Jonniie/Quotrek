@@ -82,3 +82,8 @@ a:-webkit-any-link {
   text-decoration: none;
   transition: all 0.2s;
 }
+
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+}

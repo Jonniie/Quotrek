@@ -8,10 +8,13 @@ import Pricing from "./pages/Pricing";
 import CityList from "./components/CityList";
 
 import Login from "./pages/Login";
+import { CitiesProvider } from "./contexts/CitiesContext";
+import CountryList from "./components/CountryList";
+import City from "./components/City";
 
 function App() {
   return (
-    <>
+    <CitiesProvider>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route
@@ -22,9 +25,10 @@ function App() {
             </div>
           }
         >
-          <Route index element={<CityList />} />
+          <Route index element={<Navigate replace to="cities" />} />
           <Route path="cities" element={<CityList />} />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route path="countries" element={<CountryList />} />
+          <Route path="cities/:id" element={<City />} />
           <Route path="form" element={<p>Form</p>} />
         </Route>
         <Route
@@ -54,7 +58,7 @@ function App() {
           }
         />
       </Routes>
-    </>
+    </CitiesProvider>
   );
 }
 
