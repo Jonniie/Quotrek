@@ -15,7 +15,7 @@ function PageNav() {
       <ul>
         <li>
           <NavLink
-            to={isLoaded && isSignedIn ? "/app" : "/sign-in"}
+            to={isLoaded && isSignedIn ? "/app" : "/login"}
             className={styles.ctaLink}
           >
             {btnTxt}
