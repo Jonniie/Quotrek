@@ -5,11 +5,11 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 
+import Login from "./pages/Login";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
-import { SignIn, SignUp } from "@clerk/clerk-react";
 
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect } from "react";
@@ -53,8 +53,8 @@ function App() {
           <Route path="form" element={<Form />} />
         </Route>
 
-        <Route path="/sign-in" element={<SignIn redirectUrl="/app" />} />
-        <Route path="/sign-up" element={<SignUp redirectUrl="/app" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Login />} />
         <Route
           path="*"
           element={
