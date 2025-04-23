@@ -11,13 +11,14 @@ export default function Login() {
     <main className={styles.login}>
       {isSignUp ? (
         <SignUp
+          redirectUrl="/app"
           fallbackRedirectUrl="/app"
           appearance={{
             baseTheme: dark,
           }}
         />
       ) : (
-        <SignIn />
+        <SignIn redirectUrl="/app" />
       )}
     </main>
   );
