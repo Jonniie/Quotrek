@@ -165,16 +165,6 @@ src/
 - `vite`: Build tool
 - `eslint`: Linting
 
----
-
-## Future Enhancements
-
-- Add support for uploading images for each city.
-- Implement social sharing for travel logs.
-- Add analytics to track user activity and travel trends.
-
----
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
