@@ -17,13 +17,7 @@ export default function Login() {
           }}
         />
       ) : (
-        <SignIn
-          oauthFlow="popup"
-          fallbackRedirectUrl="/app"
-          appearance={{
-            baseTheme: dark,
-          }}
-        />
+        <SignIn />
       )}
     </main>
   );

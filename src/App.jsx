@@ -5,30 +5,31 @@ import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
 
-import Login from "./pages/Login";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import CountryList from "./components/CountryList";
 import City from "./components/City";
 import Form from "./components/Form";
+import { SignIn, SignUp } from "@clerk/clerk-react";
 
-import { useAuth } from "@clerk/clerk-react";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+  useAuth,
+} from "@clerk/clerk-react";
 
 function ProtectedRoute({ children }) {
-  const { isSignedIn, isLoaded } = useAuth();
-  const navigate = useNavigate();
-
-  useEffect(
-    function () {
-      if (isLoaded) {
-        if (!isSignedIn) navigate("/");
-      }
-    },
-    [children, isLoaded, isSignedIn, navigate]
+  const { isLoaded } = useAuth();
+  return (
+    isLoaded && (
+      <>
+        <SignedIn>{children}</SignedIn>
+        <SignedOut>
+          <RedirectToSignIn />
+        </SignedOut>
+      </>
+    )
   );
-
-  return isSignedIn ? children : null;
 }
 
 function App() {
@@ -53,8 +54,8 @@ function App() {
           <Route path="form" element={<Form />} />
         </Route>
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Login />} />
+        <Route path="/sign-in" element={<SignIn redirectUrl="/app" />} />
+        <Route path="/sign-up" element={<SignUp redirectUrl="/app" />} />
         <Route
           path="*"
           element={
