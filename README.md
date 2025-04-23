@@ -25,6 +25,10 @@ Quotrek is a React-based travel tracking application that allows users to log th
 - **Build Tool**: Vite
 
 ---
+Demo Video
+[quotrek demo.webm](https://github.com/user-attachments/assets/ef11b0f4-551d-49ae-8139-7335dbc93d5a)
+
+---
 
 ## Project Structure
 
