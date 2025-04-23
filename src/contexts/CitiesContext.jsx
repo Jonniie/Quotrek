@@ -13,6 +13,8 @@ function CitiesProvider({ children }) {
   const [locations, setLocations] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [currentLocation, setCurrentLocation] = useState({});
+
   const { user } = useUser();
   const { session } = useSession();
 
@@ -33,23 +35,48 @@ function CitiesProvider({ children }) {
     }
 
     try {
-      // Insert the new location into the Supabase database
-      const { data, error } = await client.from("locations").insert([
-        {
-          ...location,
-          user_id: user.id,
-        },
-      ]);
+      const { data, error } = await client
+        .from("locations")
+        .insert([
+          {
+            ...location,
+            user_id: user.id,
+          },
+        ])
+        .select("*");
 
       if (error) {
         console.error("Error adding location:", error);
         return;
       }
 
-      // Update the local state with the new location
       setLocations((prevLocations) => [...prevLocations, ...data]);
     } catch (err) {
       console.error("Unexpected error adding location:", err);
+    }
+  }
+
+  async function deleteLocation(id) {
+    if (!user) {
+      console.error("User is not authenticated.");
+      return;
+    }
+
+    try {
+      // Delete the location from the Supabase database
+      const { error } = await client.from("locations").delete().eq("id", id);
+
+      if (error) {
+        console.error("Error deleting location:", error);
+        return;
+      }
+
+      // Update the local state by filtering out the deleted location
+      setLocations((prevLocations) =>
+        prevLocations.filter((location) => location.id !== id)
+      );
+    } catch (err) {
+      console.error("Unexpected error deleting location:", err);
     }
   }
 
@@ -71,7 +98,16 @@ function CitiesProvider({ children }) {
   }, [client, user]);
 
   return (
-    <CitiesContext.Provider value={{ locations, loading, addLocation }}>
+    <CitiesContext.Provider
+      value={{
+        locations,
+        loading,
+        addLocation,
+        currentLocation,
+        setCurrentLocation,
+        deleteLocation,
+      }}
+    >
       {children}
     </CitiesContext.Provider>
   );
