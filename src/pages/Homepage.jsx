@@ -20,7 +20,7 @@ export default function Homepage() {
           that shaped your travels. Share your adventures and let the world see
           where you've wandered.
         </h2>
-        <Link to={isSignedIn ? "/app" : "/sign-up"} className="cta">
+        <Link to={isSignedIn ? "/app" : "/signup"} className="cta">
           Start tracking now
         </Link>
       </section>
