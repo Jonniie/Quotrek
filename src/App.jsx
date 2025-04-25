@@ -4,7 +4,6 @@ import Homepage from "./pages/Homepage";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./pages/AppLayout";
 import CityList from "./components/CityList";
-
 import Login from "./pages/Login";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import CountryList from "./components/CountryList";
