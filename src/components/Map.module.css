@@ -18,14 +18,14 @@
 }
 
 :global(.leaflet-popup .leaflet-popup-content) {
-  font-size: 1.5rem;
+  font-size: var(--font-size-small);
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 :global(.leaflet-popup .leaflet-popup-content span:first-child) {
-  font-size: 2.5rem;
+  font-size: var(--font-size-medium);
   line-height: 1;
 }
 
