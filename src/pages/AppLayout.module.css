@@ -1,7 +1,20 @@
+:global(:root) {
+  --font-size-small: clamp(1.2rem, 1.5vw, 1.6rem);
+  --font-size-medium: clamp(1.6rem, 2vw, 2rem);
+  --font-size-large: clamp(2.4rem, 3vw, 3.2rem);
+  --font-size-xlarge: clamp(3.2rem, 4vw, 4.8rem);
+}
+
 .app {
   height: 100vh;
   padding: 2.4rem;
   overscroll-behavior-y: none;
   display: flex;
   position: relative;
+}
+
+@media screen and (max-width: 640px) {
+  .app {
+    padding: 0.6rem;
+  }
 }

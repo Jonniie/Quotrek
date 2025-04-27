@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 #root {
-  /* max-width: 1280px; */
-  /* padding: 2rem; */
   margin: 0 auto;
   text-align: center;
 }
@@ -19,8 +19,13 @@
 }
 
 @media screen and (max-width: 600px) {
-  .logo-text {
+  main .logo-text {
     display: none;
+  }
+
+  div .logo-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
   }
 }
 

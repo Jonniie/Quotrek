@@ -3,6 +3,6 @@
 }
 
 .copyright {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-small) !important;
   color: var(--color-light--1);
 }
